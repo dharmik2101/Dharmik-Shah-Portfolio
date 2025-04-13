@@ -1,0 +1,779 @@
+/* Leadership and Soft Skills Section Styles */
+
+.leadership-content {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .leadership-text {
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  
+  .leadership-text p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  /* Soft Skills Grid */
+  .soft-skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+  }
+  
+  .soft-skill-card {
+    height: 250px;
+    perspective: 1000px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  
+  .soft-skill-card.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .soft-skill-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  .soft-skill-card:hover .soft-skill-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .soft-skill-front, .soft-skill-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .soft-skill-front {
+    background-color: rgba(255, 255, 255, 0.05);
+    text-align: center;
+  }
+  
+  .soft-skill-back {
+    background-color: var(--primary);
+    transform: rotateY(180deg);
+    padding: 20px;
+    text-align: left;
+  }
+  
+  .soft-skill-icon {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(76, 201, 240, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .soft-skill-icon i {
+    font-size: 28px;
+    color: var(--accent);
+  }
+  
+  .soft-skill-title {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: var(--light);
+  }
+  
+  .soft-skill-desc {
+    color: #8892b0;
+    text-align: center;
+  }
+  
+  .soft-skill-examples {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .soft-skill-examples li {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 10px;
+    font-size: 14px;
+    position: relative;
+    padding-left: 20px;
+  }
+  
+  .soft-skill-examples li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+  }
+  
+  /* Leadership Achievement */
+  .leadership-achievement {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .leadership-achievement:hover {
+    transform: translateY(-10px);
+    background-color: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  }
+  
+  .leadership-achievement::before {
+    content: '';
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    width: 100px;
+    height: 100px;
+    background-color: var(--primary);
+    border-radius: 50%;
+    opacity: 0.1;
+    z-index: 0;
+  }
+  
+  .leadership-achievement-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: var(--accent);
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .leadership-achievement-content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .achievement-icon {
+    width: 80px;
+    height: 80px;
+    background-color: rgba(76, 201, 240, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  
+  .achievement-icon i {
+    font-size: 36px;
+    color: var(--accent);
+  }
+  
+  .achievement-text {
+    flex: 1;
+  }
+  
+  .achievement-text p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #e6f1ff;
+  }
+  
+  .achievement-text strong {
+    color: var(--accent);
+    font-weight: 700;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .soft-skills-grid {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+    
+    .leadership-achievement-content {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .soft-skills-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .soft-skill-card {
+      height: 220px;
+    }
+    
+    .soft-skill-desc {
+      font-size: 14px;
+    }
+  }
+/* Leadership Section Styles */
+.leadership-intro {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 50px;
+}
+
+.leadership-intro p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #e6f1ff;
+}
+
+/* Soft Skills Carousel */
+.soft-skills-carousel {
+  position: relative;
+  padding: 20px 0 60px;
+  margin-bottom: 60px;
+}
+
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+  padding: 20px 60px;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 30px;
+  transition: transform 0.5s ease;
+  padding: 10px 0;
+}
+
+.soft-skill-card {
+  flex: 0 0 300px;
+  min-width: 300px;
+  height: 320px;
+  perspective: 1000px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.5s forwards;
+  animation-delay: calc(var(--card-index) * 0.1s);
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.soft-skill-card-inner {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.soft-skill-card-inner:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.soft-skill-card-inner::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 80px;
+  height: 80px;
+  background-color: var(--primary);
+  opacity: 0.1;
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.soft-skill-icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: rgba(76, 201, 240, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.soft-skill-icon i {
+  font-size: 30px;
+  color: var(--accent);
+}
+
+.soft-skill-title {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: var(--light);
+  position: relative;
+  z-index: 1;
+}
+
+.soft-skill-desc {
+  color: #8892b0;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+  flex-grow: 1;
+}
+
+.soft-skill-example {
+  background-color: rgba(76, 201, 240, 0.05);
+  border-left: 3px solid var(--accent);
+  padding: 10px 15px;
+  text-align: left;
+  border-radius: 0 5px 5px 0;
+  font-size: 14px;
+  color: #a8b2d1;
+  position: relative;
+  z-index: 1;
+}
+
+.example-tag {
+  color: var(--accent);
+  font-weight: 600;
+  margin-right: 5px;
+}
+
+.carousel-nav {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+.carousel-prev, .carousel-next {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: var(--light);
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+}
+
+.carousel-prev:hover, .carousel-next:hover {
+  background-color: var(--primary);
+  color: white;
+}
+
+/* Leadership Achievement Section */
+.leadership-achievement {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.achievement-header {
+  background: linear-gradient(to right, var(--primary), var(--accent));
+  padding: 25px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.achievement-header h3 {
+  font-size: 24px;
+  color: white;
+  margin: 0;
+}
+
+.achievement-icon {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.achievement-icon i {
+  font-size: 24px;
+  color: white;
+}
+
+.achievement-content {
+  padding: 30px;
+}
+
+.achievement-stats {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 30px;
+}
+
+.stat-box {
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  width: 30%;
+}
+
+.stat-box:hover {
+  transform: translateY(-5px);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.stat-value {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: #8892b0;
+}
+
+.achievement-desc {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #e6f1ff;
+  text-align: center;
+}
+
+/* Media Queries */
+@media (max-width: 992px) {
+  .achievement-stats {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .stat-box {
+    width: 45%;
+  }
+}
+
+@media (max-width: 768px) {
+  .soft-skill-card {
+    flex: 0 0 270px;
+    min-width: 270px;
+  }
+  
+  .carousel-container {
+    padding: 20px 40px;
+  }
+  
+  .achievement-stats {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .stat-box {
+    width: 80%;
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .soft-skill-card {
+    flex: 0 0 230px;
+    min-width: 230px;
+    height: 350px;
+  }
+  
+  .carousel-container {
+    padding: 20px 30px;
+  }
+  
+  .achievement-header {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+  
+  .stat-box {
+    width: 100%;
+  }
+}
+
+/* Leadership & Soft Skills Section */
+#leadership {
+  padding: 80px 0;
+}
+
+.leadership-intro {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.leadership-intro-content {
+  flex: 1;
+}
+
+.leadership-intro-content p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #e6f1ff;
+}
+
+.leadership-image {
+  flex: 0 0 350px;
+  position: relative;
+}
+
+.leadership-img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.leadership-img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.image-caption {
+  position: absolute;
+  bottom: -15px;
+  right: 20px;
+  background: linear-gradient(to right, #4361ee, #4cc9f0);
+  color: white;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 14px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Skills Cards Grid */
+.skills-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.skill-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-card:hover {
+  transform: translateY(-10px);
+  background-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.skill-card::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 80px;
+  height: 80px;
+  background-color: #4361ee;
+  opacity: 0.1;
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.skill-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: rgba(76, 201, 240, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.skill-icon i {
+  font-size: 25px;
+  color: #4cc9f0;
+}
+
+.skill-title {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #e6f1ff;
+  position: relative;
+  z-index: 1;
+}
+
+.skill-desc {
+  color: #8892b0;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.skill-example {
+  background-color: rgba(76, 201, 240, 0.05);
+  border-left: 3px solid #4cc9f0;
+  padding: 10px 15px;
+  border-radius: 0 5px 5px 0;
+  font-size: 14px;
+  color: #a8b2d1;
+  position: relative;
+  z-index: 1;
+}
+
+.example-label {
+  color: #4cc9f0;
+  font-weight: 600;
+  margin-right: 5px;
+}
+
+/* Achievement Showcase */
+.leadership-achievement {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.achievement-title {
+  background: linear-gradient(to right, #4361ee, #4cc9f0);
+  padding: 25px 30px;
+  font-size: 24px;
+  color: white;
+  margin: 0;
+}
+
+.achievement-content {
+  padding: 30px;
+  display: flex;
+  gap: 40px;
+}
+
+.achievement-stats {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.stat-box {
+  flex: 1;
+  min-width: 120px;
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.stat-box:hover {
+  transform: translateY(-5px);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.stat-value {
+  font-size: 36px;
+  font-weight: 700;
+  color: #4cc9f0;
+  margin-bottom: 10px;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: #8892b0;
+}
+
+.achievement-image {
+  flex: 1;
+}
+
+.achievement-img {
+  width: 100%;
+  height: 100%;
+  min-height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.achievement-img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .leadership-intro {
+    flex-direction: column;
+  }
+  
+  .leadership-image {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .achievement-content {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-cards-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .stat-box {
+    flex: 0 0 100%;
+  }
+}
